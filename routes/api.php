@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Core\StatusController;
+use App\Http\Controllers\Core\TaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,4 +23,5 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 
 Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::apiResource('status', StatusController::class);
+    Route::apiResource('tasks', TaskController::class);
 });
